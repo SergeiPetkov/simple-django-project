@@ -1,7 +1,7 @@
 # simple-django-project 
 ## Installation
 
-### Prerequisites
+#### Prerequisites
 Install Docker.  Follow the steps form the below reference document based on your Operating System. Reference: [docs.docker.com](https://docs.docker.com/engine/install/)
 
 1. Clone git repository
