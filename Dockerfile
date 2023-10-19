@@ -6,7 +6,7 @@ LABEL maintainer="sp8997778@gmail.com" \
       description="python:v3.7.2 for simple-django-project"
 
 # Значение переменной при запуске скрипта
-ENV PROJECT_VERSION=${project_version}
+ARG PROJECT_V
 
 # Установка, создание и активация виртуальной среды
 RUN pip install virtualenv \
@@ -21,7 +21,7 @@ RUN git clone --branch=deploy --single-branch http://github.com/SergeiPetkov/sim
 WORKDIR /simple-django-project
 
 # Переход к определенной версии проекта
-RUN git checkout $PROJECT_VERSION
+RUN git checkout $PROJECT_V
 
 # Обновления необходимые перед установкой зависимостей (ошибка You should consider upgrading via the 'pip install --upgrade pip' command.)
 RUN pip install --upgrade setuptools \
