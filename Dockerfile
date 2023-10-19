@@ -5,6 +5,9 @@ FROM python:3.7.2
 LABEL maintainer="sp8997778@gmail.com" \
       description="python:v3.7.2 for simple-django-project"
 
+# Значение переменной при запуске скрипта
+ENV PROJECT_VERSION=${project_version}
+
 # Установка, создание и активация виртуальной среды
 RUN pip install virtualenv \
     && mkdir /envs \
@@ -12,10 +15,13 @@ RUN pip install virtualenv \
     && . /envs/bin/activate
 
 # Клонирование Git репозитория
-RUN git clone "https://github.com/SergeiPetkov/simple-django-project.git"
+RUN git clone --branch=deploy --single-branch http://github.com/SergeiPetkov/simple-django-project.git
 
 # Установка рабочей директории
 WORKDIR /simple-django-project
+
+# Переход к определенной версии проекта
+RUN git checkout $PROJECT_VERSION
 
 # Обновления необходимые перед установкой зависимостей (ошибка You should consider upgrading via the 'pip install --upgrade pip' command.)
 RUN pip install --upgrade setuptools \
