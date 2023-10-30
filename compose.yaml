@@ -30,10 +30,10 @@ services:
 
     volumes:
       # Монтирование тома в контейнере
-      - /home/usr1/Github/simple-django-project/world.sql:/mysql-files/world.sql
+      - /home/usr1/simple-django-project/world.sql:/mysql-files/world.sql
 
   django:
-    image: django:v1
+    image: django:${TAG}
     # Автоматический перезапуск
     restart: always
 
