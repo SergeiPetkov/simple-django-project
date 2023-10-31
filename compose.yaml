@@ -33,7 +33,7 @@ services:
       - /home/usr1/simple-django-project/world.sql:/mysql-files/world.sql
 
   django:
-    image: django:${TAG}
+    image: sergeypetkov/django:${TAG}
     # Автоматический перезапуск
     restart: always
 
