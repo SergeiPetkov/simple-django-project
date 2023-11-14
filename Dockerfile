@@ -14,8 +14,8 @@ RUN pip install virtualenv \
     && virtualenv /envs/ \
     && . /envs/bin/activate
 
-# Клонирование Git репозитория
-RUN git clone --branch=deploy --single-branch http://github.com/SergeiPetkov/simple-django-project.git
+#  Копирование файлов и каталогов из локальной файловой системы
+COPY . /simple-django-project
 
 # Установка рабочей директории
 WORKDIR /simple-django-project
