@@ -21,7 +21,7 @@ COPY . /simple-django-project
 WORKDIR /simple-django-project
 
 # Переход к определенной версии проекта
-RUN git checkout $PROJECT_V
+#RUN git checkout $PROJECT_V
 
 # Обновления необходимые перед установкой зависимостей (ошибка You should consider upgrading via the 'pip install --upgrade pip' command.)
 RUN pip install --upgrade setuptools \
