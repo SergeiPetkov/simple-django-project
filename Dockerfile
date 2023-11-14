@@ -30,6 +30,6 @@ RUN pip install --upgrade setuptools \
 # Установка всех зависимостей из requirements.txt
 RUN pip install -r requirements.txt
 
-# Режим ожидания
-CMD ["sleep", "infinity"]
+# Запуск приложения при старте контейнера
+CMD ["python", "manage.py", "runserver", "0:8001"]
 
