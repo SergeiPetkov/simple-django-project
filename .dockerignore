@@ -1,2 +1,4 @@
 # Игнорировать каталоги и файлы
 .git
+Dockerfile
+README.md
