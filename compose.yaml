@@ -31,7 +31,7 @@ services:
     volumes:
       # Монтирование тома в контейнере
       - /home/usr1/simple-django-project/world.sql:/mysql-files/world.sql
-      - /var/lib/mysql:/var/lib/mysql
+      - /var/lib/mysql1:/var/lib/mysql
 
   django:
     image: sergeypetkov/django:${TAG}
