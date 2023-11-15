@@ -32,10 +32,7 @@ services:
       # Монтирование тома в контейнере
       - /home/usr1/simple-django-project/world.sql:/mysql-files/world.sql
       - /var/lib/mysql1:/var/lib/mysql
-      - /home/usr1/simple-django-project/source-mysql.sh:/script/source-mysql.sh
-
-    command: ["/script/source-mysql.sh"]
-
+      
   django:
     image: sergeypetkov/django:${TAG}
     # Автоматический перезапуск
